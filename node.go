@@ -83,6 +83,8 @@ func ParseNode(s string) (node Node, err error) {
 	case "kcp", "ssh", "quic":
 	case "ssu":
 		node.Transport = "udp"
+	case "tor":
+		node.Transport = "tor"
 	case "ohttp", "otls", "obfs4": // obfs
 	case "tcp", "udp":
 	case "rtcp", "rudp": // rtcp and rudp are for remote port forwarding
@@ -104,6 +106,8 @@ func ParseNode(s string) (node Node, err error) {
 	case "ss", "ssu":
 	case "ss2": // as of 2.10.1, ss2 is same as ss
 		node.Protocol = "ss"
+	case "tor":
+		node.Protocol = "tor"
 	case "sni":
 	case "tcp", "udp", "rtcp", "rudp": // port forwarding
 	case "direct", "remote", "forward": // forwarding
